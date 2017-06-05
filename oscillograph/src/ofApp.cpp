@@ -18,7 +18,7 @@ void ofApp::setup(){
     
     //if you want to set a different device id
     //soundStream.setDeviceID(0); //bear in mind the device id corresponds to all audio devices, including  input-only and output-only devices.
-    soundStream.setDeviceID(2);
+    soundStream.setDeviceID(3);
     int bufferSize = 256;
     
     ofFmodSetBuffersize(bufferSize);
@@ -84,8 +84,8 @@ void ofApp::draw(){
     
   
     
-    ofSetColor(245, 58, 135);
-    ofSetLineWidth(3);
+    ofSetColor(144, 144, 144);
+    ofSetLineWidth(1);
     
     ofBeginShape();
     for (unsigned int i = 0; i < right.size(); i++){
