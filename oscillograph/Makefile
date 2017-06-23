@@ -6,7 +6,7 @@ endif
 
 # make sure the the OF_ROOT location is defined
 ifndef OF_ROOT
-    OF_ROOT=$(realpath ../../../../../Documents/_gllm/of_v0.9.8_osx_release)
+    OF_ROOT=$/Users/gllm/Documents/_gllm/of_git/of_v20170517_osx_release
 endif
 
 # call the project makefile!

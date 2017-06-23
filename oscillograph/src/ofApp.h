@@ -48,9 +48,15 @@ class ofApp : public ofBaseApp{
     
     ofSoundStream soundStream;
     
-    ofParameter<float> shapeScale =.5;
+
     
     ofxPanel gui;
+    ofParameterGroup parameters;
+    ofParameter<ofColor> line_color;
+    ofParameter<float> shapeScale =.5;
+    ofParameter<int> line_width = 1;
+    
+    bool gui_draw = 1;
     
     
 };

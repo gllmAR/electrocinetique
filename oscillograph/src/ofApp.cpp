@@ -29,8 +29,7 @@ void ofApp::setup(){
     right.assign(bufferSize, 0.0);
     volHistory.assign(400, 0.0);
     
-    recLeft.assign(bufferSize, 0.0);
-    recRight.assign(bufferSize, 0.0);
+
     
     bufferCounter	= 0;
     drawCounter		= 0;
@@ -38,7 +37,18 @@ void ofApp::setup(){
     scaledVol		= 0.0;
     
     soundStream.setup(this, 0, 2, sampleRate, bufferSize, 4);
-    ofSoundStreamSetup(2, 0, sampleRate, bufferSize, 4);
+    
+    
+    // gui setup
+    parameters.setName("parameters");
+    parameters.add(shapeScale.set("shapeScale",.5,0,1));
+     parameters.add(line_width.set("line_width",1,1,10));
+    parameters.add(line_color.set("color",ofColor(127),ofColor(0,0),ofColor(255)));
+
+
+    
+    gui.setup(parameters);
+    
 
     
 }
@@ -68,9 +78,11 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+    if (gui_draw)
+    {
+        gui.draw();
+    }
     ofNoFill();
-     ofDrawBitmapString("OSCILO", 4, 18);
     
     // draw the OSCILO channel:
     ofPushStyle();
@@ -79,13 +91,10 @@ void ofApp::draw(){
                 ofGetWindowHeight()/2,
                 0);
     
-    ofSetColor(225);
-   
+
     
-  
-    
-    ofSetColor(144, 144, 144);
-    ofSetLineWidth(1);
+    ofSetColor(line_color);
+    ofSetLineWidth(line_width);
     
     ofBeginShape();
     for (unsigned int i = 0; i < right.size(); i++){
@@ -152,13 +161,10 @@ void ofApp::audioOut(ofSoundBuffer &outBuffer) {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    if( key == 's' ){
-        soundStream.start();
+    if( key == 'g' ){
+        gui_draw=!gui_draw;
     }
     
-    if( key == 'e' ){
-        soundStream.stop();
-    }
 
 }
 
