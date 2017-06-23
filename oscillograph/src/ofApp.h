@@ -36,7 +36,6 @@ class ofApp : public ofBaseApp{
 
 
     //mutex audioMutex;
-    ofSoundBuffer lastBuffer;
     double sampleRate;
     
     vector <float> recLeft;
@@ -48,8 +47,6 @@ class ofApp : public ofBaseApp{
 //    float smoothedVol;
 //    float scaledVol;
     
-//    ofSoundStream soundStream;
-    
 
     
     ofxPanel gui;
@@ -58,7 +55,7 @@ class ofApp : public ofBaseApp{
     ofParameter<float> shapeScale =.5;
     ofParameter<int> line_width = 1;
     
-    bool gui_draw = 1;
+    bool gui_draw = 0;
     int app_size_w=100;
     int app_size_h=100;
     

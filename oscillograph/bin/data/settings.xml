@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<parameters>
+	<shapeScale>0.85</shapeScale>
+	<line_width>2</line_width>
+	<color>0, 255, 0, 255</color>
+</parameters>
