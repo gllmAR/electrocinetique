@@ -7,23 +7,11 @@ void ofApp::setup(){
     ofBackground(0, 0, 0);
     
     sampleRate = 44100;
-    
-    // 0 output channels,
-    // 2 input channels
-    // 44100 samples per second
-    // 256 samples per buffer
-    // 4 num buffers (latency)
+    ofSetFrameRate(60);
     
     soundStream.printDeviceList();
-    
-    //if you want to set a different device id
-    //soundStream.setDeviceID(0); //bear in mind the device id corresponds to all audio devices, including  input-only and output-only devices.
-    soundStream.setDeviceID(3);
-    int bufferSize = 256;
-    
-    ofFmodSetBuffersize(bufferSize);
-    
 
+    int bufferSize = 256;
     
     left.assign(bufferSize, 0.0);
     right.assign(bufferSize, 0.0);
@@ -36,7 +24,26 @@ void ofApp::setup(){
     smoothedVol     = 0.0;
     scaledVol		= 0.0;
     
-    soundStream.setup(this, 0, 2, sampleRate, bufferSize, 4);
+    
+    ofSoundStreamSettings settings;
+
+//    auto devices = soundStream.getMatchingDevices("default");
+//    if(!devices.empty()){
+//        settings.setInDevice(devices[5]);
+//    }
+     auto devices = soundStream.getDeviceList();
+     settings.setInDevice(devices[3]);
+    
+
+    settings.setInListener(this);
+    settings.sampleRate = 44100;
+    settings.numOutputChannels = 0;
+    settings.numInputChannels = 2;
+    settings.bufferSize = bufferSize;
+    soundStream.setup(settings);
+
+    
+    //soundStream.setup(this, 0, 2, sampleRate, bufferSize, 4);
     
     
     // gui setup
@@ -58,7 +65,7 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 
-    unique_lock<mutex> lock(audioMutex);
+   // unique_lock<mutex> lock(audioMutex);
 
     
     //lets scale the vol up to a 0-1 range
@@ -110,7 +117,7 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 
 
-void ofApp::audioIn(float * input, int bufferSize, int nChannels){
+void ofApp::audioIn(ofSoundBuffer & input){
     
     float curVol = 0.0;
     
@@ -118,7 +125,7 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels){
     int numCounted = 0;
     
     //lets go through each sample and calculate the root mean square which is a rough way to calculate volume
-    for (int i = 0; i < bufferSize; i++){
+    for (int i = 0; i < input.getNumFrames(); i++){
         left[i]		= input[i*2]*0.5;
         right[i]	= input[i*2+1]*0.5;
         
@@ -142,20 +149,7 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels){
 //--------------------------------------------------------------
 
 
-void ofApp::audioOut(ofSoundBuffer &outBuffer) {
-    
-    for(size_t i = 0; i < outBuffer.getNumFrames(); i++) {
-        
-        //enregistrement.ofSoundGetSpectrum(i,0);
-        
-        recLeft[i]=outBuffer.getSample(i, 0);
-        recRight[i]=outBuffer.getSample(i, 1);
-     
-    }
-    
-    unique_lock<mutex> lock(audioMutex);
-    lastBuffer = outBuffer;
-}
+
 //--------------------------------------------------------------
 
 

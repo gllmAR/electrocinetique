@@ -25,15 +25,17 @@ class ofApp : public ofBaseApp{
     void exit();
     
     
-    void audioIn(float * input, int bufferSize, int nChannels);
+   void audioIn(ofSoundBuffer & input);
+    ofSoundStream soundStream;
+
+    
     vector <float> left;
     vector <float> right;
     vector <float> volHistory;
     
-    void audioOut(ofSoundBuffer &outBuffer);
 
 
-    mutex audioMutex;
+    //mutex audioMutex;
     ofSoundBuffer lastBuffer;
     double sampleRate;
     
@@ -46,7 +48,7 @@ class ofApp : public ofBaseApp{
     float smoothedVol;
     float scaledVol;
     
-    ofSoundStream soundStream;
+//    ofSoundStream soundStream;
     
 
     
