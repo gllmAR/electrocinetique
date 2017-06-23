@@ -20,21 +20,23 @@ void ofApp::setup(){
 
     
     bufferCounter	= 0;
-    drawCounter		= 0;
-    smoothedVol     = 0.0;
-    scaledVol		= 0.0;
-    
+//    drawCounter		= 0;
+//    smoothedVol     = 0.0;
+//    scaledVol		= 0.0;
+//    
     
     ofSoundStreamSettings settings;
 
-//    auto devices = soundStream.getMatchingDevices("default");
-//    if(!devices.empty()){
-//        settings.setInDevice(devices[5]);
-//    }
-     auto devices = soundStream.getDeviceList();
-     settings.setInDevice(devices[3]);
+#ifdef TARGET_LINUX_ARM
+    auto devices = soundStream.getMatchingDevices("default");
+    if(!devices.empty()){
+        settings.setInDevice(devices[0]);
+    }
+#else
+    auto devices = soundStream.getDeviceList();
+    settings.setInDevice(devices[3]);
+#endif
     
-
     settings.setInListener(this);
     settings.sampleRate = 44100;
     settings.numOutputChannels = 0;
@@ -43,7 +45,7 @@ void ofApp::setup(){
     soundStream.setup(settings);
 
     
-    //soundStream.setup(this, 0, 2, sampleRate, bufferSize, 4);
+
     
     
     // gui setup
@@ -65,22 +67,18 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 
-   // unique_lock<mutex> lock(audioMutex);
 
-    
-    //lets scale the vol up to a 0-1 range
-    scaledVol = ofMap(smoothedVol, 0.0, 0.17, 0.0, 1.0, true);
-    
-    //lets record the volume into an array
-    volHistory.push_back( scaledVol );
-    
-    //if we are bigger the the size we want to record - lets drop the oldest value
-    if( volHistory.size() >= 400 ){
-        volHistory.erase(volHistory.begin(), volHistory.begin()+1);
-    }
-    ofSoundUpdate();
-    
-    
+//    //lets scale the vol up to a 0-1 range
+//    scaledVol = ofMap(smoothedVol, 0.0, 0.17, 0.0, 1.0, true);
+//    
+//    //lets record the volume into an array
+//    volHistory.push_back( scaledVol );
+//    
+//    //if we are bigger the the size we want to record - lets drop the oldest value
+//    if( volHistory.size() >= 400 ){
+//        volHistory.erase(volHistory.begin(), volHistory.begin()+1);
+//    }
+
 }
 
 //--------------------------------------------------------------
@@ -94,8 +92,8 @@ void ofApp::draw(){
     // draw the OSCILO channel:
     ofPushStyle();
     ofPushMatrix();
-    ofTranslate(ofGetWindowWidth()/2,
-                ofGetWindowHeight()/2,
+    ofTranslate(app_size_w/2,
+                app_size_h/2,
                 0);
     
 
@@ -105,8 +103,8 @@ void ofApp::draw(){
     
     ofBeginShape();
     for (unsigned int i = 0; i < right.size(); i++){
-        ofVertex(left[i]*ofGetWindowWidth()*shapeScale,
-                 0 -right[i]*ofGetWindowHeight()*shapeScale);
+        ofVertex(left[i]*app_size_w*shapeScale,
+                 0 -right[i]*app_size_h*shapeScale);
     }
     ofEndShape(false);
     
@@ -129,19 +127,19 @@ void ofApp::audioIn(ofSoundBuffer & input){
         left[i]		= input[i*2]*0.5;
         right[i]	= input[i*2+1]*0.5;
         
-        curVol += left[i] * left[i];
-        curVol += right[i] * right[i];
+//        curVol += left[i] * left[i];
+//        curVol += right[i] * right[i];
         numCounted+=2;
     }
     
-    //this is how we get the mean of rms :)
-    curVol /= (float)numCounted;
+//    //this is how we get the mean of rms :)
+//    curVol /= (float)numCounted;
+//    
+//    // this is how we get the root of rms :)
+//    curVol = sqrt( curVol );
     
-    // this is how we get the root of rms :)
-    curVol = sqrt( curVol );
-    
-    smoothedVol *= 0.93;
-    smoothedVol += 0.07 * curVol;
+//    smoothedVol *= 0.93;
+//    smoothedVol += 0.07 * curVol;
     
     bufferCounter++;
     
@@ -190,6 +188,7 @@ void ofApp::mouseReleased(int x, int y, int button){
 //--------------------------------------------------------------
 void ofApp::mouseEntered(int x, int y){
 
+
 }
 
 //--------------------------------------------------------------
@@ -199,7 +198,8 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-
+    app_size_w = w;
+    app_size_h = h;
 }
 
 //--------------------------------------------------------------

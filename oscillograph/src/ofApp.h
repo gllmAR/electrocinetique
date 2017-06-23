@@ -45,8 +45,8 @@ class ofApp : public ofBaseApp{
     int 	bufferCounter;
     int 	drawCounter;
     
-    float smoothedVol;
-    float scaledVol;
+//    float smoothedVol;
+//    float scaledVol;
     
 //    ofSoundStream soundStream;
     
@@ -59,6 +59,8 @@ class ofApp : public ofBaseApp{
     ofParameter<int> line_width = 1;
     
     bool gui_draw = 1;
+    int app_size_w=100;
+    int app_size_h=100;
     
     
 };
