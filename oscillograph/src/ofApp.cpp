@@ -28,10 +28,13 @@ void ofApp::setup(){
     ofSoundStreamSettings settings;
 
 #ifdef TARGET_LINUX_ARM
-    auto devices = soundStream.getMatchingDevices("default");
-    if(!devices.empty()){
+	auto devices = soundStream.getDeviceList();
         settings.setInDevice(devices[0]);
-    }
+        
+//    auto devices = soundStream.getMatchingDevices("default");
+//   if(!devices.empty()){
+//        settings.setInDevice(devices[0]);
+//    }
 #else
     auto devices = soundStream.getDeviceList();
     settings.setInDevice(devices[3]);
