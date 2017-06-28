@@ -4,6 +4,8 @@
 void ofApp::setup(){
 
     ofSetVerticalSync(true);
+
+    cam.setDistance(750);
     ofBackground(0, 0, 0);
     
     sampleRate = 44100;
@@ -31,10 +33,7 @@ void ofApp::setup(){
 	auto devices = soundStream.getDeviceList();
         settings.setInDevice(devices[0]);
         
-//    auto devices = soundStream.getMatchingDevices("default");
-//   if(!devices.empty()){
-//        settings.setInDevice(devices[0]);
-//    }
+
 #else
     auto devices = soundStream.getDeviceList();
     settings.setInDevice(devices[3]);
@@ -56,13 +55,16 @@ void ofApp::setup(){
     parameters.add(shapeScale.set("shapeScale",.85,0,2));
     parameters.add(line_width.set("line_width",1,1,10));
     parameters.add(line_color.set("color",ofColor(255),ofColor(0,0),ofColor(255)));
-
+    parameters.add(cam_set_ortho.set("cam_set_ortho", 1));
+    parameters.add(cam_set_reset.set("cam_set_reset", 1));
 
     
     gui.setup(parameters);
     
     
     gui.loadFromFile("settings.xml");
+    
+    
     
 
     
@@ -77,34 +79,47 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    if (gui_draw)
-    {
-        gui.draw();
-    }
+
+    
+    ofEnableDepthTest();
+    if (cam_set_ortho){cam.enableOrtho();}else{cam.disableOrtho();};
+    if (cam_set_reset){cam.reset(); cam_set_reset=0;};
+    cam.begin();
     ofNoFill();
     
     // draw the OSCILO channel:
     ofPushStyle();
     ofPushMatrix();
-    ofTranslate(app_size_w/2,
-                app_size_h/2,
-                0);
+//    ofTranslate(app_size_w/2,
+//                app_size_h/2,
+//                0);
     
 
     
     ofSetColor(line_color);
     ofSetLineWidth(line_width);
-    
+    // trouver une manière de mettre ca en 3d
     ofBeginShape();
-    for (unsigned int i = 0; i < right.size(); i++){
+    for (unsigned int i = 0; i < right.size(); i++)
+    {
         ofVertex(left[i]*app_size_w*shapeScale,
-                 0 -right[i]*app_size_h*shapeScale);
+                 0 -right[i]*app_size_h*shapeScale,
+                i);
+       
     }
     ofEndShape(false);
-    
+
     ofPopMatrix();
     ofPopStyle();
     
+    cam.end();
+    
+    ofDisableDepthTest();
+    
+    if (gui_draw)
+    {
+        gui.draw();
+    }
 }
 //--------------------------------------------------------------
 

@@ -27,16 +27,16 @@ class ofApp : public ofBaseApp{
     
    void audioIn(ofSoundBuffer & input);
     ofSoundStream soundStream;
+    double sampleRate;
+    
+    ofEasyCam cam;
+    ofParameter<bool> cam_set_ortho = 0;
+    ofParameter<bool> cam_set_reset = 0;
 
     
     vector <float> left;
     vector <float> right;
     vector <float> volHistory;
-    
-
-
-    //mutex audioMutex;
-    double sampleRate;
     
     vector <float> recLeft;
     vector <float> recRight;
