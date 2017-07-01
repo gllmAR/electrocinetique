@@ -44,9 +44,6 @@ class ofApp : public ofBaseApp{
     int 	bufferCounter;
     int 	drawCounter;
     
-//    float smoothedVol;
-//    float scaledVol;
-    
 
     
     ofxPanel gui;
@@ -54,10 +51,17 @@ class ofApp : public ofBaseApp{
     ofParameter<ofColor> line_color;
     ofParameter<float> shapeScale =.5;
     ofParameter<int> line_width = 1;
+    ofParameter<bool> set_fullscreen = 0;
+    bool set_fullscreen_old = 0;
     
     bool gui_draw = 0;
     int app_size_w=100;
     int app_size_h=100;
+    
+    ofVboMesh vbo_mesh;
+    
+    double timestamp;
+    double vertex_remover;
     
     
 };

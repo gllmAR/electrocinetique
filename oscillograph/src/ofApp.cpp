@@ -31,7 +31,7 @@ void ofApp::setup(){
 
 #ifdef TARGET_LINUX_ARM
 	auto devices = soundStream.getDeviceList();
-        settings.setInDevice(devices[0]);
+    settings.setInDevice(devices[0]);
         
 
 #else
@@ -57,6 +57,7 @@ void ofApp::setup(){
     parameters.add(line_color.set("color",ofColor(255),ofColor(0,0),ofColor(255)));
     parameters.add(cam_set_ortho.set("cam_set_ortho", 1));
     parameters.add(cam_set_reset.set("cam_set_reset", 1));
+    parameters.add(set_fullscreen.set("fullscreen", 0));
 
     
     gui.setup(parameters);
@@ -74,40 +75,70 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    
+    timestamp=ofGetElapsedTimeMillis();
+    
+    
+    for (unsigned int i = 0; i < (left.size()+right.size())/2; i++)
+    {
+        ofVec3f coord (left[i]*app_size_w*shapeScale,
+                    right[i]*app_size_w*shapeScale, timestamp);
+        vbo_mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
+        vbo_mesh.addVertex(coord);
+        
+    }
+    
+    int vertex_buffer = vbo_mesh.getNumVertices();
+    
+    if (vertex_buffer > 1024)
+    {
+        for (int i =0; i <512; i++)
+        {
+            vbo_mesh.removeVertex(i);
+        }
+    }
+    
+    
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
+    if (set_fullscreen_old != set_fullscreen)
+    {
+        ofSetFullscreen(set_fullscreen);
+        set_fullscreen_old = set_fullscreen;
+    };
     
     ofEnableDepthTest();
     if (cam_set_ortho){cam.enableOrtho();}else{cam.disableOrtho();};
     if (cam_set_reset){cam.reset(); cam_set_reset=0;};
+    
+    cam.setDistance(timestamp);
     cam.begin();
     ofNoFill();
     
     // draw the OSCILO channel:
     ofPushStyle();
     ofPushMatrix();
-//    ofTranslate(app_size_w/2,
-//                app_size_h/2,
-//                0);
-    
 
     
     ofSetColor(line_color);
     ofSetLineWidth(line_width);
-    // trouver une manière de mettre ca en 3d
-    ofBeginShape();
-    for (unsigned int i = 0; i < right.size(); i++)
-    {
-        ofVertex(left[i]*app_size_w*shapeScale,
-                 0 -right[i]*app_size_h*shapeScale,
-                i);
-       
-    }
-    ofEndShape(false);
+    
+    vbo_mesh.draw();
+   
+    
+//    ofBeginShape();
+//        for (unsigned int i = 0; i < right.size(); i++)
+//        {
+//            ofVertex(left[i]*app_size_w*shapeScale,
+//                     0 -right[i]*app_size_h*shapeScale,
+//                     i);
+//       
+//        }
+//    ofEndShape(false);
 
     ofPopMatrix();
     ofPopStyle();
@@ -152,6 +183,10 @@ void ofApp::audioIn(ofSoundBuffer & input){
 void ofApp::keyPressed(int key){
     if( key == 'g' ){
         gui_draw=!gui_draw;
+    }
+    
+    if (key == 'f'){
+        set_fullscreen=!set_fullscreen;
     }
     
 
