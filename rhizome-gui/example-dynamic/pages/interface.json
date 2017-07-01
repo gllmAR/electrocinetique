@@ -1,0 +1,62 @@
+var myInterface = {
+	"interface": [{
+		"class":"title",
+		"name":"sigmundBlow interface"
+		}, {
+		"class": "hFader",
+		"name": "adc.gain",
+		"min": "0",
+		"max": "1.2",
+		"step": ".01"
+	}, {
+		"class": "hFader",
+		"name": "vcf.freq",
+		"min": "0",
+		"max": "5000",
+		"step": "1"
+	}, {
+		"class": "hFader",
+		"name": "vcf.q",
+		"min": "0",
+		"max": "5",
+		"step": ".01"
+	},{
+		"class": "hFader",
+		"name": "rev.wet",
+		"min": "0",
+		"max": "1",
+		"step": ".01"
+	},{
+		"class": "hFader",
+		"name": "dsp.wet",
+		"min": "0",
+		"max": "1",
+		"step": ".01"
+	},{
+		"class": "hFader",
+		"name": "dac.gain",
+		"min": "0",
+		"max": "1.2",
+		"step": ".01"
+	},{
+		"class": "progress",
+		"name": "rms.adc",
+		"min": "0",
+		"max": "100"
+	},{
+		"class": "progress",
+		"name": "rms.dac",
+		"min": "0",
+		"max": "100"
+	},{
+
+		"class": "push",
+		"name": "test"
+	},{
+		"class": "push",
+		"name": "load"
+	},{
+		"class": "push",
+		"name": "save"
+	}]
+}

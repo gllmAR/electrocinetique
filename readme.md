@@ -1,6 +1,7 @@
+titre de l'étude
 # électrocinétique/elɛktʀosinetik
 
-## Étude sur la visualisation des courant électrique. 
+## Étude sur l'effort en réinjection électrique. 
 
 Dans une perspective élargie, Électrocinétique construit une expérience audiovisuelle à partir de l'énergie dégagée de l'interaction collective. Le nombre de participants et l'effort sont directement proportionnels à la magnitude lumineuse et sonore de l'installation.
 
@@ -22,9 +23,15 @@ Objectif de l'étude:
 
 
 
-    
+  titre  de la pièce 
+  
+murmurations oscillographiques
+
+espace de feedback 
+acoustique 
+video
+laser
 
 
 
-
-Inspiré par le fonctionnement de l'oscilloscope et par la c
+Inspiré par le fonctionnement de l'oscilloscope et par la 

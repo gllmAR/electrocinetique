@@ -2,6 +2,11 @@
 
 #include "ofMain.h"
 #include "ofxGui.h"
+#include "ofxOscParameterSync.h"
+
+#define HOST "localhost"
+#define RHIZOME_INPORT 9000
+#define RHIZOME_OUTPORT 9001
 
 class ofApp : public ofBaseApp{
 
@@ -24,6 +29,8 @@ class ofApp : public ofBaseApp{
 		
     void exit();
     
+    void rhizome_init();
+    
     
    void audioIn(ofSoundBuffer & input);
     ofSoundStream soundStream;
@@ -45,12 +52,13 @@ class ofApp : public ofBaseApp{
     int 	drawCounter;
     
 
-    
+    ofxOscParameterSync sync;
+    ofxOscSender sender;
     ofxPanel gui;
     ofParameterGroup parameters;
     ofParameter<ofColor> line_color;
     ofParameter<float> shapeScale =.5;
-    ofParameter<int> line_width = 1;
+    ofParameter<float> line_width = 1;
     ofParameter<bool> set_fullscreen = 0;
     bool set_fullscreen_old = 0;
     

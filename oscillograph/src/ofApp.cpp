@@ -65,9 +65,11 @@ void ofApp::setup(){
     
     gui.loadFromFile("settings.xml");
     
+    rhizome_init();
+    
+    sync.setup((ofParameterGroup&)gui.getParameter(),RHIZOME_OUTPORT,"localhost",RHIZOME_INPORT);
     
     
-
     
 }
 
@@ -75,6 +77,8 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    	sync.update();
+
     
     timestamp=ofGetElapsedTimeMillis();
     
@@ -249,4 +253,14 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 void ofApp::exit(){
     
     
+}
+
+void ofApp::rhizome_init()
+{
+    sender.setup(HOST, RHIZOME_INPORT);
+    ofxOscMessage m;
+    m.setAddress("/sys/subscribe");
+    m.addIntArg(RHIZOME_OUTPORT);
+    m.addStringArg("/");
+    sender.sendMessage(m, false);
 }
