@@ -22,7 +22,8 @@ void ofxSoundSettingsGui::setup()
 #ifdef TARGET_LINUX_ARM
     auto devices = soundStream.getDeviceList();
     settings.setInDevice(devices[0]);
-    
+    settings.setOutDevice(devices[0]);
+
     
 #else
     auto devices = soundStream.getDeviceList();
