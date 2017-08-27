@@ -26,8 +26,8 @@ void ofxSoundSettingsGui::setup()
     
 #else
     auto devices = soundStream.getDeviceList();
-    settings.setInDevice(devices[4]);
-    settings.setOutDevice(devices[4]);
+    settings.setInDevice(devices[3]);
+    settings.setOutDevice(devices[3]);
 #endif
     
     settings.setInListener(this);
@@ -42,7 +42,7 @@ void ofxSoundSettingsGui::setup()
         left.assign(buffer_size, 0.0);
         right.assign(buffer_size, 0.0);
         out1.assign(buffer_size, 0.0);
-    out2.assign(buffer_size, 0.0);
+        out2.assign(buffer_size, 0.0);
 
 }
 
@@ -97,7 +97,7 @@ void ofxSoundSettingsGui::audioOut(ofSoundBuffer & output){
 void ofxSoundSettingsGui::update()
 {
     // regarder si les param ont change et reinit le cas echeant
-    ofSoundUpdate();
+    //ofSoundUpdate();
 }
 
 void ofxSoundSettingsGui::draw()

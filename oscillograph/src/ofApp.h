@@ -41,6 +41,7 @@ class ofApp : public ofBaseApp{
     ofEasyCam cam;
     ofParameter<bool> cam_set_ortho = 0;
     ofParameter<bool> cam_set_reset = 0;
+    ofParameter<float> mesh_width_z = 0;
 
     
 //    vector <float> left;

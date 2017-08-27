@@ -747,7 +747,8 @@ obj/osx/Release/src/main.o: \
   /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscReceiver.h \
   /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h \
   /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/../ip/PacketListener.h
+  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/../ip/PacketListener.h \
+  /Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofxSoundSettingsGui.hpp
 
 /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/libs/openFrameworks/ofMain.h:
 
@@ -2244,3 +2245,5 @@ obj/osx/Release/src/main.o: \
 /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h:
 
 /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/../ip/PacketListener.h:
+
+/Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofxSoundSettingsGui.hpp:

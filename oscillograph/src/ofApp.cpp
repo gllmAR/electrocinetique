@@ -58,6 +58,7 @@ void ofApp::setup(){
     parameters.add(shapeScale.set("shapeScale",.85,0,2));
     parameters.add(line_width.set("line_width",1, 0.1,10));
     parameters.add(line_color.set("color",ofColor(255),ofColor(0,0),ofColor(255)));
+    parameters.add(mesh_width_z.set("mesh_width_z", 1, -2, 2));
     parameters.add(cam_set_ortho.set("cam_set_ortho", 1));
     parameters.add(cam_set_reset.set("cam_set_reset", 1));
     parameters.add(set_fullscreen.set("fullscreen", 0));
@@ -115,7 +116,7 @@ void ofApp::update(){
     for (unsigned int i =0; i< vertex_buffer; i++)
     {
         ofVec3f coord = vbo_mesh.getVertex(i);
-        coord[2] = i;
+        coord[2] = mesh_width_z*i*0.01;
         vbo_mesh.setVertex(i, coord);
 
     }

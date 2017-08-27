@@ -1,6 +1,6 @@
-obj/osx/Release/src/ofApp.o: \
-  /Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofApp.cpp \
-  /Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofApp.h \
+obj/osx/Release/src/ofxSoundSettingsGui.o: \
+  /Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofxSoundSettingsGui.cpp \
+  /Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofxSoundSettingsGui.hpp \
   /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/libs/openFrameworks/ofMain.h \
   /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/libs/openFrameworks/utils/ofConstants.h \
   /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/libs/glm/include/glm/glm.hpp \
@@ -732,25 +732,9 @@ obj/osx/Release/src/ofApp.o: \
   /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxGui/src/ofxButton.h \
   /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxGui/src/ofxColorPicker.h \
   /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxGui/src/ofxPanel.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxGui/src/ofxLabel.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscParameterSync.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscSender.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscException.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/ip/UdpSocket.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/ip/NetworkingUtils.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscBundle.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscMessage.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscArg.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscReceiver.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h \
-  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/../ip/PacketListener.h \
-  /Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofxSoundSettingsGui.hpp
+  /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxGui/src/ofxLabel.h
 
-/Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofApp.h:
+/Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofxSoundSettingsGui.hpp:
 
 /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/libs/openFrameworks/ofMain.h:
 
@@ -2215,35 +2199,3 @@ obj/osx/Release/src/ofApp.o: \
 /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxGui/src/ofxPanel.h:
 
 /Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxGui/src/ofxLabel.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscParameterSync.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscSender.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscException.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/ip/UdpSocket.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/ip/NetworkingUtils.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscBundle.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscMessage.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscArg.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/src/ofxOscReceiver.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h:
-
-/Users/gllm/Documents/_gllm/of_git/of_v20170714_osx_release/addons/ofxOsc/libs/oscpack/src/osc/../ip/PacketListener.h:
-
-/Users/gllm/CloudStation/git/academique/electrocinetique/oscillograph/src/ofxSoundSettingsGui.hpp:
