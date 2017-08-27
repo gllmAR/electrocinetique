@@ -81,6 +81,9 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
+    
+    
     	sync.update();
     soundSettingsGui.update();
 
@@ -182,6 +185,11 @@ void ofApp::draw(){
     if (gui_draw)
     {
         gui.draw();
+    }
+    if (screen_workaround_to_update)
+    {
+        windowResized(ofGetWidth(), ofGetHeight());
+        screen_workaround_to_update = 0;
     }
 }
 //--------------------------------------------------------------

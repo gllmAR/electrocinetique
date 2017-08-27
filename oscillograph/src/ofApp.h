@@ -76,5 +76,6 @@ class ofApp : public ofBaseApp{
     double timestamp;
     double vertex_remover;
     
-    
+
+    bool screen_workaround_to_update = 1;
 };
