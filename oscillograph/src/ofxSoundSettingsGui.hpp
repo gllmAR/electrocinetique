@@ -17,7 +17,7 @@
 #include "ofxGui.h"
 
 
-g
+
 class ofxSoundSettingsGui
 {
 public:
