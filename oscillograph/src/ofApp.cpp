@@ -5,7 +5,7 @@ void ofApp::setup(){
 
     ofSetVerticalSync(true);
 
-    cam.setDistance(buffer_history);
+    cam.setDistance(buffer_history*0.01);
     ofBackground(0, 0, 0);
     
     
@@ -116,7 +116,7 @@ void ofApp::update(){
     for (unsigned int i =0; i< vertex_buffer; i++)
     {
         ofVec3f coord = vbo_mesh.getVertex(i);
-        coord[2] = mesh_width_z*i*0.01;
+        coord[2] = mesh_width_z*i*0.1;
         vbo_mesh.setVertex(i, coord);
 
     }
