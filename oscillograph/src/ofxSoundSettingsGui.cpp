@@ -77,18 +77,19 @@ void ofxSoundSettingsGui::audioIn(ofSoundBuffer & input){
 
 void ofxSoundSettingsGui::audioOut(ofSoundBuffer & output){
     
-    float curVol = 0.0;
-    
-    // au lieu d avoir left right mieux de travailler en un vecteur de channel input
-    // samples are "interleaved"
-    int numCounted = 0;
-    
-    for (int i = 0; i < output.getNumFrames(); i++){
-        out1[i] = output[i*output.getNumChannels()    ] = left[i];
-        out2[i] = output[i*output.getNumChannels()  +1] = right[i];
-        
-        numCounted+=2;
-    }
+    // pas besoins d'out pour maintenant
+//    float curVol = 0.0;
+//    
+//    // au lieu d avoir left right mieux de travailler en un vecteur de channel input
+//    // samples are "interleaved"
+//    int numCounted = 0;
+//    
+//    for (int i = 0; i < output.getNumFrames(); i++){
+//        out1[i] = output[i*output.getNumChannels()    ] = left[i];
+//        out2[i] = output[i*output.getNumChannels()  +1] = right[i];
+//        
+//        numCounted+=2;
+//    }
     
 
     
