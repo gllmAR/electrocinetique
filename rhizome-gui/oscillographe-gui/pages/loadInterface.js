@@ -94,6 +94,15 @@ function loadInterface() {
                 document.body.appendChild(x);
                 break;
 
+			case "toggle":
+                var x = document.createElement("BUTTON");
+                x.id = '/' + myInterface.interface[i].name;
+                x.setAttribute("class", myInterface.interface[i].class)
+                x.setAttribute("onclick", "rhizomeClient.send(" + "'/" + myInterface.interface[i].name + "'" + ",[parseFloat(1)])")
+                x.innerHTML = '/' + myInterface.interface[i].name + " ";
+                document.body.appendChild(x);
+                break;
+                
               case "progress":
                   var x = document.createElement("PROGRESS");
                   var y = document.createElement("SPAN");

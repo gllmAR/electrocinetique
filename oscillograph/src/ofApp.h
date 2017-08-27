@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxGui.h"
 #include "ofxOscParameterSync.h"
+#include "ofxSoundSettingsGui.hpp"
 
 #define HOST "localhost"
 #define RHIZOME_INPORT 9000
@@ -32,8 +33,9 @@ class ofApp : public ofBaseApp{
     void rhizome_init();
     
     
-   void audioIn(ofSoundBuffer & input);
-    ofSoundStream soundStream;
+  // void audioIn(ofSoundBuffer & input);
+   // ofSoundStream soundStream;
+    ofxSoundSettingsGui soundSettingsGui;
     double sampleRate;
     
     ofEasyCam cam;
@@ -41,8 +43,8 @@ class ofApp : public ofBaseApp{
     ofParameter<bool> cam_set_reset = 0;
 
     
-    vector <float> left;
-    vector <float> right;
+//    vector <float> left;
+//    vector <float> right;
     vector <float> volHistory;
     
     vector <float> recLeft;
@@ -61,6 +63,8 @@ class ofApp : public ofBaseApp{
     ofParameter<float> line_width = 1;
     ofParameter<bool> set_fullscreen = 0;
     bool set_fullscreen_old = 0;
+        ofParameter<int> buffer_history = 1024;
+    ofParameter<int> buffer_size = 256;
     
     bool gui_draw = 0;
     int app_size_w=100;

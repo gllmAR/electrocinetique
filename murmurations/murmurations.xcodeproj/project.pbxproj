@@ -12,7 +12,7 @@
 		13982E869E498D5176632249 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 247EC1DD7F4562407EC8CF3D /* ofxOscMessage.cpp */; };
 		478517EFCD8092DD4F256EC6 /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7ADB3A76973E53A0E5DF2CF /* ofxSliderGroup.cpp */; };
 		48B9B7F1CD7E7E23298ECF2C /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8A75AB61952246F46CCA63A /* ofxGuiGroup.cpp */; };
-		4D3869431F394CBC003610CE /* ofxSoundSettingsGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D3869411F394CBC003610CE /* ofxSoundSettingsGui.cpp */; };
+		4D9AA0581F094A3300B00775 /* murmure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D9AA0561F094A3300B00775 /* murmure.cpp */; };
 		5853BDA09B53027D2360CC7B /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 602AF51D9FE1C2C407561985 /* ofxOscSender.cpp */; };
 		60516165B626426897228F97 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A11F410C7D7EEE4BD6EDD189 /* ofxBaseGui.cpp */; };
 		629930AC341B9BED8BE95491 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D121FF8C219A4B1B37970C51 /* ofxToggle.cpp */; };
@@ -84,8 +84,8 @@
 		3A8B18E3A457B3AA4BB30136 /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPanel.cpp; path = ../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src/ofxPanel.cpp; sourceTree = SOURCE_ROOT; };
 		43F30A47ED7A7100E2202BC0 /* ofxInputField.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxInputField.h; path = ../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src/ofxInputField.h; sourceTree = SOURCE_ROOT; };
 		4561CA2C7A8C5D4987FDAEE7 /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
-		4D3869411F394CBC003610CE /* ofxSoundSettingsGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSoundSettingsGui.cpp; sourceTree = "<group>"; };
-		4D3869421F394CBC003610CE /* ofxSoundSettingsGui.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ofxSoundSettingsGui.hpp; sourceTree = "<group>"; };
+		4D9AA0561F094A3300B00775 /* murmure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = murmure.cpp; sourceTree = "<group>"; };
+		4D9AA0571F094A3300B00775 /* murmure.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = murmure.hpp; sourceTree = "<group>"; };
 		4DBDD69976FE4BA8F61F2B9A /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
 		5145F09BE0CA32D700B85E11 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = IpEndpointName.h; path = ../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
 		55DA602D4D67D4E61F25FF7D /* UdpSocket.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = UdpSocket.cpp; path = ../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack/src/ip/posix/UdpSocket.cpp; sourceTree = SOURCE_ROOT; };
@@ -116,7 +116,7 @@
 		DBB4C2BD0A70841656BEA159 /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscTypes.cpp; path = ../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp; sourceTree = SOURCE_ROOT; };
 		E250E393D6627AD3CED6F9ED /* OscTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscTypes.h; path = ../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
-		E4B69B5B0A3A1756003C02F2 /* oscillographDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oscillographDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* murmurationsDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = murmurationsDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
@@ -283,7 +283,7 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				6948EE371B920CB800B5AC1A /* local_addons */,
-				E4B69B5B0A3A1756003C02F2 /* oscillographDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* murmurationsDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -293,8 +293,8 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
-				4D3869411F394CBC003610CE /* ofxSoundSettingsGui.cpp */,
-				4D3869421F394CBC003610CE /* ofxSoundSettingsGui.hpp */,
+				4D9AA0561F094A3300B00775 /* murmure.cpp */,
+				4D9AA0571F094A3300B00775 /* murmure.hpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -334,9 +334,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* oscillograph */ = {
+		E4B69B5A0A3A1756003C02F2 /* murmurations */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "oscillograph" */;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "murmurations" */;
 			buildPhases = (
 				E4B69B580A3A1756003C02F2 /* Sources */,
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
@@ -349,9 +349,9 @@
 			dependencies = (
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
-			name = oscillograph;
+			name = murmurations;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* oscillographDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* murmurationsDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -362,7 +362,7 @@
 			attributes = {
 				LastUpgradeCheck = 0600;
 			};
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "oscillograph" */;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "murmurations" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -383,7 +383,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* oscillograph */,
+				E4B69B5A0A3A1756003C02F2 /* murmurations */,
 			);
 		};
 /* End PBXProject section */
@@ -443,12 +443,12 @@
 				9D65C39762554A40F386D34A /* ofxPanel.cpp in Sources */,
 				BAF2033B7C3468071B70C12E /* ofxSlider.cpp in Sources */,
 				478517EFCD8092DD4F256EC6 /* ofxSliderGroup.cpp in Sources */,
+				4D9AA0581F094A3300B00775 /* murmure.cpp in Sources */,
 				629930AC341B9BED8BE95491 /* ofxToggle.cpp in Sources */,
 				97CD74E13264804639C9292D /* ofxOscBundle.cpp in Sources */,
 				13982E869E498D5176632249 /* ofxOscMessage.cpp in Sources */,
 				DB570F1D629206800166F12C /* ofxOscParameterSync.cpp in Sources */,
 				722F56695C9AEC8BC6F67AF0 /* ofxOscReceiver.cpp in Sources */,
-				4D3869431F394CBC003610CE /* ofxSoundSettingsGui.cpp in Sources */,
 				5853BDA09B53027D2360CC7B /* ofxOscSender.cpp in Sources */,
 				EB943F63593F4171446157EF /* IpEndpointName.cpp in Sources */,
 				A49A24AEE5855BD3C90A83F0 /* NetworkingUtils.cpp in Sources */,
@@ -494,7 +494,6 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack,
@@ -526,7 +525,6 @@
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "APPSTORE=1";
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack,
@@ -569,7 +567,6 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack,
@@ -612,7 +609,6 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack,
@@ -644,7 +640,6 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack,
@@ -676,7 +671,6 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxGui/src,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs,
 					../../../../../Documents/_gllm/of_git/of_v20170517_osx_release/addons/ofxOsc/libs/oscpack,
@@ -701,7 +695,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "oscillograph" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "murmurations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
@@ -711,7 +705,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "oscillograph" */ = {
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "murmurations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B600A3A1757003C02F2 /* Debug */,

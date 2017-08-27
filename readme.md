@@ -35,3 +35,13 @@ laser
 
 
 Inspiré par le fonctionnement de l'oscilloscope et par la 
+
+TODO 
+*  oscillographe -> 
+	* [x] trouver une manière de garder la caméra fixe au lieu de la faire bouger 
+	* [x] optimiser la question du timestamp
+	* [x] régler le cas de la profondeur de champs en mode perspective
+	* [x] optimiser la gestion des vertex usé.
+		* [x] utiliser l'index dans le vertex comme valeur en Z  
+* [ ] rhizome-gui -> régler le cas de la couleur et des toggles 
+ 

@@ -20,8 +20,8 @@ var myInterface = {
 	}, 
 	{
 
-		"class": "push",
-		"name": "test"
+		"class": "toggle",
+		"name": "parameters/fullscreen"
 	},
 	{
 		"class": "push",

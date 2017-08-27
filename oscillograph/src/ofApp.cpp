@@ -5,18 +5,20 @@ void ofApp::setup(){
 
     ofSetVerticalSync(true);
 
-    cam.setDistance(750);
+    cam.setDistance(buffer_history);
     ofBackground(0, 0, 0);
+    
     
     sampleRate = 44100;
     ofSetFrameRate(60);
     
-    soundStream.printDeviceList();
-
-    int bufferSize = 256;
-    
-    left.assign(bufferSize, 0.0);
-    right.assign(bufferSize, 0.0);
+    //soundStream.printDeviceList();
+    soundSettingsGui.setup();
+    // soundSettingsGui.getBufferSize
+//    int bufferSize = 256;
+//    
+//    left.assign(buffer_size, 0.0);
+//    right.assign(buffer_size, 0.0);
     volHistory.assign(400, 0.0);
     
 
@@ -27,24 +29,24 @@ void ofApp::setup(){
 //    scaledVol		= 0.0;
 //    
     
-    ofSoundStreamSettings settings;
-
-#ifdef TARGET_LINUX_ARM
-	auto devices = soundStream.getDeviceList();
-    settings.setInDevice(devices[0]);
-        
-
-#else
-    auto devices = soundStream.getDeviceList();
-    settings.setInDevice(devices[3]);
-#endif
-    
-    settings.setInListener(this);
-    settings.sampleRate = 44100;
-    settings.numOutputChannels = 0;
-    settings.numInputChannels = 2;
-    settings.bufferSize = bufferSize;
-    soundStream.setup(settings);
+//    ofSoundStreamSettings settings;
+//
+//#ifdef TARGET_LINUX_ARM
+//	auto devices = soundStream.getDeviceList();
+//    settings.setInDevice(devices[0]);
+//        
+//
+//#else
+//    auto devices = soundStream.getDeviceList();
+//    settings.setInDevice(devices[3]);
+//#endif
+//    
+//    settings.setInListener(this);
+//    settings.sampleRate = 44100;
+//    settings.numOutputChannels = 0;
+//    settings.numInputChannels = 2;
+//    settings.bufferSize = buffer_size;
+//    soundStream.setup(settings);
 
     
 
@@ -52,8 +54,9 @@ void ofApp::setup(){
     
     // gui setup
     parameters.setName("parameters");
+    parameters.add(buffer_history.set("buffer_history", 1024,buffer_size+1,4096));
     parameters.add(shapeScale.set("shapeScale",.85,0,2));
-    parameters.add(line_width.set("line_width",1,1,10));
+    parameters.add(line_width.set("line_width",1, 0.1,10));
     parameters.add(line_color.set("color",ofColor(255),ofColor(0,0),ofColor(255)));
     parameters.add(cam_set_ortho.set("cam_set_ortho", 1));
     parameters.add(cam_set_reset.set("cam_set_reset", 1));
@@ -78,29 +81,53 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     	sync.update();
+    soundSettingsGui.update();
 
     
     timestamp=ofGetElapsedTimeMillis();
     
-    
-    for (unsigned int i = 0; i < (left.size()+right.size())/2; i++)
+    int vertex_buffer = vbo_mesh.getNumVertices();
+
+      for (unsigned int i = 0; i < (soundSettingsGui.buffer_size); i++)
+        
+//    for (unsigned int i = 0; i < (left.size()+right.size())/2; i++)
     {
-        ofVec3f coord (left[i]*app_size_w*shapeScale,
-                    right[i]*app_size_w*shapeScale, timestamp);
-        vbo_mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
-        vbo_mesh.addVertex(coord);
+        ofVec3f coord (soundSettingsGui.left[i]*app_size_w*shapeScale,
+                       soundSettingsGui.right[i]*app_size_w*shapeScale,
+                       buffer_history-i);
+        
+        if (vertex_buffer > buffer_history)
+        {
+            vbo_mesh.removeVertex(i);
+            vbo_mesh.setVertex(buffer_history-i, coord);
+            
+            
+        } else {
+            vbo_mesh.addVertex(coord);
+        }
+    
+
         
     }
     
-    int vertex_buffer = vbo_mesh.getNumVertices();
+    //au lieu de faire une lecture et une ecriture, mieux vaudrait utiliser un pointeur pour changer la derniere donnee
     
-    if (vertex_buffer > 1024)
+    for (unsigned int i =0; i< vertex_buffer; i++)
     {
-        for (int i =0; i <512; i++)
-        {
-            vbo_mesh.removeVertex(i);
-        }
+        ofVec3f coord = vbo_mesh.getVertex(i);
+        coord[2] = i;
+        vbo_mesh.setVertex(i, coord);
+
     }
+    vbo_mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
+    
+//    if (vertex_buffer > 1024)
+//    {
+//        for (int i =0; i <512; i++)
+//        {
+//            vbo_mesh.removeVertex(i);
+//        }
+//    }
     
     
     
@@ -119,7 +146,7 @@ void ofApp::draw(){
     if (cam_set_ortho){cam.enableOrtho();}else{cam.disableOrtho();};
     if (cam_set_reset){cam.reset(); cam_set_reset=0;};
     
-    cam.setDistance(timestamp);
+   // cam.setDistance(timestamp);
     cam.begin();
     ofNoFill();
     
@@ -159,23 +186,23 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 
 
-void ofApp::audioIn(ofSoundBuffer & input){
-    
-    float curVol = 0.0;
-    
-    // samples are "interleaved"
-    int numCounted = 0;
-    
-    for (int i = 0; i < input.getNumFrames(); i++){
-        left[i]		= input[i*2]*0.5;
-        right[i]	= input[i*2+1]*0.5;
-        
-        numCounted+=2;
-    }
-    
-    bufferCounter++;
-    
-}
+//void ofApp::audioIn(ofSoundBuffer & input){
+//    
+//    float curVol = 0.0;
+//    
+//    // samples are "interleaved"
+//    int numCounted = 0;
+//    
+//    for (int i = 0; i < input.getNumFrames(); i++){
+//        left[i]		= input[i*2]*0.5;
+//        right[i]	= input[i*2+1]*0.5;
+//        
+//        numCounted+=2;
+//    }
+//    
+//    bufferCounter++;
+//    
+//}
 //--------------------------------------------------------------
 
 
