@@ -96,8 +96,8 @@ void ofApp::update(){
         
 //    for (unsigned int i = 0; i < (left.size()+right.size())/2; i++)
     {
-        ofVec3f coord (soundSettingsGui.left[i]*app_size_w*shapeScale,
-                       soundSettingsGui.right[i]*app_size_w*shapeScale,
+        ofVec3f coord (soundSettingsGui.left[i]*app_size_w/2*shapeScale,
+                       soundSettingsGui.right[i]*app_size_w/2*shapeScale,
                        buffer_history-i);
         
         if (vertex_buffer > buffer_history)
@@ -272,6 +272,7 @@ void ofApp::mouseExited(int x, int y){
 void ofApp::windowResized(int w, int h){
     app_size_w = w;
     app_size_h = h;
+    cout << "app size = " << w << " by " << h <<endl;
 }
 
 //--------------------------------------------------------------
