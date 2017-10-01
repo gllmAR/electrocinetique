@@ -27,8 +27,8 @@ void ofxSoundSettingsGui::setup()
     
 #else
     auto devices = soundStream.getDeviceList();
-    settings.setInDevice(devices[2]);
-    settings.setOutDevice(devices[2]);
+    settings.setInDevice(devices[3]);
+    settings.setOutDevice(devices[3]);
 #endif
     
     settings.setInListener(this);

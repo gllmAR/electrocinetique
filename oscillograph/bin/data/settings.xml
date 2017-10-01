@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <parameters>
-	<shapeScale>1.5</shapeScale>
-	<line_width>0.8425</line_width>
-	<color>0, 255, 0, 255</color>
-	<buffer_history>2905</buffer_history>
+	<shapeScale>2</shapeScale>
+	<line_width>0.199</line_width>
+	<color>200, 204, 28, 255</color>
+	<buffer_history>2022</buffer_history>
 	<cam_set_ortho>0</cam_set_ortho>
 	<cam_set_reset>0</cam_set_reset>
 	<fullscreen>1</fullscreen>
-	<mesh_width_z>-0.0599999</mesh_width_z>
+	<mesh_width_z>-0.0915</mesh_width_z>
 </parameters>
